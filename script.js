@@ -325,7 +325,7 @@ function acertouaud() {
   }
 }
 function tempoacabouaud() {
-  if (document.querySelector(".nome").value == "admmin") {
+  if (document.querySelector(".nome").value == "admmin" || proxperg == 31) {
   } else {
     tempoacabouaudio.muted = false;
     tempoacabouaudio.play().catch((error) => {});
