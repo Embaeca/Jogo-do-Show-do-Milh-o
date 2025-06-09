@@ -39,7 +39,8 @@ let cont = 0;
 let conttemp = 30;
 let tempoInterval;
 let controle_dica = false;
-let ganhou = false
+let ganhou = false;
+let perdeu = false;
 
 pp = [];
 const respostas = [
@@ -180,8 +181,8 @@ function comecar_jog() {
 function noopc() {
   if (document.querySelector(".nome").value == "admin") {
   } else {
+    perdeu = true;
     errouaud();
-    suspense.muted = true;
   }
 }
 function opc() {
@@ -253,13 +254,11 @@ function animacao() {
 }
 
 function temp() {
-  if (ganhou == true || document.querySelector(".nome").value == "admin"){
-
-  } else{
-
+  if (ganhou == true || document.querySelector(".nome").value == "admin") {
+  } else {
     clearInterval(tempoInterval);
     temporizador.innerHTML = conttemp;
-    
+
     tempoInterval = setInterval(() => {
       conttemp--;
       temporizador.innerHTML = conttemp;
@@ -301,6 +300,7 @@ function errouaud() {
       "ended",
       () => {
         respostaerradaaudio.muted = true;
+        suspense.muted = true;
         resperr();
       },
       { once: true }
@@ -325,7 +325,7 @@ function acertouaud() {
   }
 }
 function tempoacabouaud() {
-  if (document.querySelector(".nome").value == "admmin" || proxperg == 31) {
+  if (document.querySelector(".nome").value == "admmin" || perdeu == true) {
   } else {
     tempoacabouaudio.muted = false;
     tempoacabouaudio.play().catch((error) => {});
@@ -351,7 +351,7 @@ function suspenceaud() {
 }
 function vitoriaaud() {
   vitoria.muted = false;
-  vitoria.volume = 0.5
+  vitoria.volume = 0.5;
   vitoria.play().catch((error) => {});
   vitoria.addEventListener("ended", function loopvitoria() {
     if (!vitoria.muted) {
