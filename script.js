@@ -99,6 +99,8 @@ comecar_jogo.addEventListener("click", () => {
   if (document.querySelector(".comecar_jogo").value == "2") {
     window.location.reload();
   } else {
+    
+  const nome = document.querySelector(".nome").value;
     boasorteaud();
   }
 });
@@ -272,7 +274,6 @@ function telainicialaud() {
   aberturaaudio.play().catch((error) => {});
 }
 function boasorteaud() {
-  const nome = document.querySelector(".nome").value;
   if (nome == "" || nome == undefined) {
     alert("Por favor digite seu nome!!");
   }else{
