@@ -14,7 +14,7 @@ Não possui nenhuma ligação oficial com o SBT, Silvio Santos ou qualquer marca
 A **voz do Silvio Santos** foi utilizada de forma caricata, como forma de entretenimento e aprendizado técnico.  
 **Não é um produto comercial.**
 
-> "Ma ôe! É só uma brincadeira, tá bom? Tá certo ou não tá?" – Silvio (mais ou menos 😄)
+> "Ma ôe! É só uma brincadeira, tá bom?"
 
 ---
 
