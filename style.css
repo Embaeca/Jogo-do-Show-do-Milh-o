@@ -1,0 +1,277 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cabeçalho */
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Seção inicial */
+.iniciar_jogo {
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.iniciar_jogo input.nome {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+
+.iniciar_jogo button {
+  padding: 10px 20px;
+  background-color: #ffd700;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.iniciar_jogo button:hover {
+  background-color: #ffcc00;
+}
+
+/* Resultado final */
+.resultado_final {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.resultado_final h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.acertos {
+  margin: 1rem;
+}
+.name::before {
+  content: "Nome: ";
+}
+.acertos::before {
+  content: "Acertos: ";
+}
+.valor_toral::before {
+  content: "Valor total: R$";
+}
+.valor_toral::after {
+  content: ",00";
+}
+.valor_toral {
+  margin: 0 0 1rem 0;
+}
+
+/* Perguntas */
+.aa {
+  display: flex;
+  flex-direction: row;
+}
+.perguntas {
+  display: none;
+  margin-top: 30px;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.valor_acumulado {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #ffd700;
+}
+.valor_acumulado::before {
+  content: "Valor acumulado: R$";
+}
+.valor_acumulado::after {
+  content: ",00";
+}
+
+.dica {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #ff6347;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+.dica::before {
+  content: "Dica: ";
+}
+
+.dica:hover {
+  background-color: #e5533c;
+}
+
+/* Pergunta */
+.pergnum::before {
+  content: "Pergunta: ";
+}
+.pergnum {
+  position: relative;
+  left: 80%;
+}
+.btn.ativo {
+  background-color: #ffcc00;
+  color: #f6f6f6;
+}
+.btn.ativo:hover {
+  background-color: #ffcc00;
+  color: #f6f6f6;
+  transform: scale(1);
+}
+.perg {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.pergunta {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.perg31 {
+  display: none;
+  height: 50svh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  background-image: url(./imgs/fundo.png);
+  background-position: 0 0;
+  animation: moove 25s linear infinite;
+}
+.perg31 h1 {
+  transition: 0.3s ease-in-out;
+}
+.perg31 p {
+  margin: 0.5rem;
+}
+.resetwin {
+  display: none;
+  margin: 2rem;
+  padding: 0.5rem;
+  background-color: #ffcc00;
+  border: 3px solid #1e3c72;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.temporizador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  left: 90%;
+  height: 30px;
+  width: 30px;
+  background-color: #e5533c;
+  color: #ddd;
+  animation: puilse 1s infinite linear;
+}
+/* Opções */
+.ops {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.a::before {
+  content: "a) ";
+}
+.b::before {
+  content: "b) ";
+}
+.c::before {
+  content: "c) ";
+}
+.d::before {
+  content: "d) ";
+}
+
+.ops button {
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.ops button:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+  .ops {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes moove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 800px;
+  }
+}
+@keyframes puilse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jogo do Milhão</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="imgs/favicon.jpeg" type="image/x-icon" />
+  </head>
+  <body onload="telainicialaud()">
+    <audio src="audios/moeda-show-do-milhao.mp3" class="moedaaud" preload="auto" muted autoplay></audio>
+    <audio src="audios/show-do-milhao1.mp3" class="vitoriaaud" preload="auto" muted autoplay></audio>
+    <audio src="audios/boa-sorte-show-do-milhao.mp3" class="boasorteaudio" preload="auto" muted autoplay></audio>
+    <audio
+      src="audios/show-do-milhao2.mp3"
+      class="aberturaaudio"
+      preload="auto"
+      muted
+      autoplay
+    ></audio>
+    <audio
+      src="audios/certa-resposta-show-do-milhao.mp3"
+      class="certarespostaaudio"
+      preload="auto"
+      muted
+      autoplay
+    ></audio>
+    <audio
+      src="audios/errou-show-do-milhao.mp3"
+      class="respostaerradaaudio"
+      preload="auto"
+      muted
+      autoplay
+    ></audio>
+    <audio
+      src="audios/tempo-acabou-show-do-milhao.mp3"
+      class="tempoacabouaudio"
+      preload="auto"
+      muted
+      autoplay
+    ></audio>
+    <audio
+      src="audios/suspense-show-do-milhao.mp3"
+      class="suspense"
+      preload="auto"
+      muted
+      autoplay
+    ></audio>
+    <header>
+      <h1>Jogo do Milhão</h1>
+    </header>
+    <section class="iniciar_jogo">
+      <input class="nome" type="text" placeholder="Nome" />
+      <div class="resultado_final">
+        <h2 class="name"></h2>
+        <strong><p class="acertos"></p></strong>
+        <p><strong class="valor_toral"></strong></p>
+      </div>
+
+      <button value="1" class="comecar_jogo">Começar jogo</button>
+    </section>
+    <section class="perguntas">
+      <div class="aa">
+        <div class="temporizador">30</div>
+        <div class="dica">10</div>
+      </div>
+
+      <div class="valor_acumulado">10</div>
+      <div class="perg1 perg">
+        <h2 class="pergunta">Qual a cor do céu em um dia ensolarado?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Verde</button>
+          <button class="b btn" onclick="opc()">Azul</button>
+          <button class="c btn" onclick="noopc()">Vermelho</button>
+          <button class="d btn" onclick="noopc()">Amarelo</button>
+        </div>
+      </div>
+
+      <div class="perg2 perg">
+        <h2 class="pergunta">Quanto é 2 + 2?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">3</button>
+          <button class="b btn" onclick="noopc()">5</button>
+          <button class="c btn" onclick="opc()">4</button>
+          <button class="d btn" onclick="noopc()">6</button>
+        </div>
+      </div>
+
+      <div class="perg3 perg">
+        <h2 class="pergunta">
+          Qual animal é conhecido como o melhor amigo do homem?
+        </h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Gato</button>
+          <button class="b btn" onclick="noopc()">Leão</button>
+          <button class="c btn" onclick="opc()">Cachorro</button>
+          <button class="d btn" onclick="noopc()">Cavalo</button>
+        </div>
+      </div>
+
+      <div class="perg4 perg">
+        <h2 class="pergunta">Qual fruta é amarela e rica em potássio?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Maçã</button>
+          <button class="b btn" onclick="opc()">Banana</button>
+          <button class="c btn" onclick="noopc()">Morango</button>
+          <button class="d btn" onclick="noopc()">Laranja</button>
+        </div>
+      </div>
+
+      <div class="perg5 perg">
+        <h2 class="pergunta">Qual o plural de 'pão'?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Pões</button>
+          <button class="b btn" onclick="noopc()">Pãos</button>
+          <button class="c btn" onclick="opc()">Pães</button>
+          <button class="d btn" onclick="noopc()">Paes</button>
+        </div>
+      </div>
+
+      <div class="perg6 perg">
+        <h2 class="pergunta">Qual o número de lados de um triângulo?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">2</button>
+          <button class="b btn" onclick="noopc()">4</button>
+          <button class="c btn" onclick="opc()">3</button>
+          <button class="d btn" onclick="noopc()">5</button>
+        </div>
+      </div>
+
+      <div class="perg7 perg">
+        <h2 class="pergunta">A qual continente pertence o Brasil?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Europa</button>
+          <button class="b btn" onclick="opc()">América do Sul</button>
+          <button class="c btn" onclick="noopc()">África</button>
+          <button class="d btn" onclick="noopc()">Ásia</button>
+        </div>
+      </div>
+
+      <div class="perg8 perg">
+        <h2 class="pergunta">Qual o maior planeta do sistema solar?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Terra</button>
+          <button class="b btn" onclick="opc()">Júpiter</button>
+          <button class="c btn" onclick="noopc()">Saturno</button>
+          <button class="d btn" onclick="noopc()">Marte</button>
+        </div>
+      </div>
+
+      <div class="perg9 perg">
+        <h2 class="pergunta">Quem pintou a Mona Lisa?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Van Gogh</button>
+          <button class="b btn" onclick="noopc()">Michelangelo</button>
+          <button class="c btn" onclick="opc()">Da Vinci</button>
+          <button class="d btn" onclick="noopc()">Picasso</button>
+        </div>
+      </div>
+
+      <div class="perg10 perg">
+        <h2 class="pergunta">Qual o símbolo químico da água?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">O2</button>
+          <button class="b btn" onclick="noopc()">CO2</button>
+          <button class="c btn" onclick="opc()">H2O</button>
+          <button class="d btn" onclick="noopc()">H2</button>
+        </div>
+      </div>
+
+      <div class="perg11 perg">
+        <h2 class="pergunta">Quem foi o primeiro presidente do Brasil?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Getúlio Vargas</button>
+          <button class="b btn" onclick="opc()">Deodoro da Fonseca</button>
+          <button class="c btn" onclick="noopc()">Lula</button>
+          <button class="d btn" onclick="noopc()">Juscelino</button>
+        </div>
+      </div>
+
+      <div class="perg12 perg">
+        <h2 class="pergunta">Qual o maior oceano da Terra?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Índico</button>
+          <button class="b btn" onclick="noopc()">Atlântico</button>
+          <button class="c btn" onclick="noopc()">Antártico</button>
+          <button class="d btn" onclick="opc()">Pacífico</button>
+        </div>
+      </div>
+
+      <div class="perg13 perg">
+        <h2 class="pergunta">Quantas sílabas tem a palavra 'computador'?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">5</button>
+          <button class="b btn" onclick="noopc()">3</button>
+          <button class="c btn" onclick="opc()">4</button>
+          <button class="d btn" onclick="noopc()">2</button>
+        </div>
+      </div>
+
+      <div class="perg14 perg">
+        <h2 class="pergunta">Quantos segundos tem um minuto?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">100</button>
+          <button class="b btn" onclick="opc()">60</button>
+          <button class="c btn" onclick="noopc()">30</button>
+          <button class="d btn" onclick="noopc()">90</button>
+        </div>
+      </div>
+
+      <div class="perg15 perg">
+        <h2 class="pergunta">Qual é o número PI, arredondado?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">3,14</button>
+          <button class="b btn" onclick="noopc()">2,17</button>
+          <button class="c btn" onclick="noopc()">4,00</button>
+          <button class="d btn" onclick="noopc()">5,01</button>
+        </div>
+      </div>
+
+      <div class="perg16 perg">
+        <h2 class="pergunta">
+          Qual país tem o formato aproximado de uma bota?
+        </h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Espanha</button>
+          <button class="b btn" onclick="noopc()">Argentina</button>
+          <button class="c btn" onclick="opc()">Itália</button>
+          <button class="d btn" onclick="noopc()">Rússia</button>
+        </div>
+      </div>
+
+      <div class="perg17 perg">
+        <h2 class="pergunta">Quem escreveu 'Dom Casmurro'?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">Machado de Assis</button>
+          <button class="b btn" onclick="noopc()">José de Alencar</button>
+          <button class="c btn" onclick="noopc()">Clarice Lispector</button>
+          <button class="d btn" onclick="noopc()">Monteiro Lobato</button>
+        </div>
+      </div>
+
+      <div class="perg18 perg">
+        <h2 class="pergunta">O que é um haicai?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Um animal</button>
+          <button class="b btn" onclick="noopc()">Um prato japonês</button>
+          <button class="c btn" onclick="opc()">Um poema curto</button>
+          <button class="d btn" onclick="noopc()">Uma espada</button>
+        </div>
+      </div>
+
+      <div class="perg19 perg">
+        <h2 class="pergunta">Qual o menor país do mundo?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Mônaco</button>
+          <button class="b btn" onclick="opc()">Vaticano</button>
+          <button class="c btn" onclick="noopc()">Malta</button>
+          <button class="d btn" onclick="noopc()">Andorra</button>
+        </div>
+      </div>
+
+      <div class="perg20 perg">
+        <h2 class="pergunta">Qual o nome do osso da coxa?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Fíbula</button>
+          <button class="b btn" onclick="noopc()">Úmero</button>
+          <button class="c btn" onclick="opc()">Fêmur</button>
+          <button class="d btn" onclick="noopc()">Tíbia</button>
+        </div>
+      </div>
+
+      <div class="perg21 perg">
+        <h2 class="pergunta">Quem descobriu a penicilina?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Louis Pasteur</button>
+          <button class="b btn" onclick="noopc()">Albert Einstein</button>
+          <button class="c btn" onclick="opc()">Alexander Fleming</button>
+          <button class="d btn" onclick="noopc()">Isaac Newton</button>
+        </div>
+      </div>
+
+      <div class="perg22 perg">
+        <h2 class="pergunta">Qual o idioma falado no Irã?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Árabe</button>
+          <button class="b btn" onclick="opc()">Persa</button>
+          <button class="c btn" onclick="noopc()">Turco</button>
+          <button class="d btn" onclick="noopc()">Curdo</button>
+        </div>
+      </div>
+
+      <div class="perg23 perg">
+        <h2 class="pergunta">Qual o maior deserto do mundo?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Saara</button>
+          <button class="b btn" onclick="noopc()">Gobi</button>
+          <button class="c btn" onclick="opc()">Antártida</button>
+          <button class="d btn" onclick="noopc()">Kalahari</button>
+        </div>
+      </div>
+
+      <div class="perg24 perg">
+        <h2 class="pergunta">Quantos cromossomos tem um ser humano?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">46</button>
+          <button class="b btn" onclick="noopc()">44</button>
+          <button class="c btn" onclick="noopc()">23</button>
+          <button class="d btn" onclick="noopc()">48</button>
+        </div>
+      </div>
+
+      <div class="perg25 perg">
+        <h2 class="pergunta">Qual a capital do Azerbaijão?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="noopc()">Tbilisi</button>
+          <button class="b btn" onclick="opc()">Baku</button>
+          <button class="c btn" onclick="noopc()">Yerevan</button>
+          <button class="d btn" onclick="noopc()">Kiev</button>
+        </div>
+      </div>
+
+      <div class="perg26 perg">
+        <h2 class="pergunta">Quem desenvolveu o teorema da incompletude?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">Gödel</button>
+          <button class="b btn" onclick="noopc()">Einstein</button>
+          <button class="c btn" onclick="noopc()">Euclides</button>
+          <button class="d btn" onclick="noopc()">Newton</button>
+        </div>
+      </div>
+
+      <div class="perg27 perg">
+        <h2 class="pergunta">Qual o metal mais leve da tabela periódica?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">Lítio</button>
+          <button class="b btn" onclick="noopc()">Hélio</button>
+          <button class="c btn" onclick="noopc()">Sódio</button>
+          <button class="d btn" onclick="noopc()">Berílio</button>
+        </div>
+      </div>
+
+      <div class="perg28 perg">
+        <h2 class="pergunta">
+          Quantos elementos tem a tabela periódica (2023)?
+        </h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">118</button>
+          <button class="b btn" onclick="noopc()">120</button>
+          <button class="c btn" onclick="noopc()">112</button>
+          <button class="d btn" onclick="noopc()">116</button>
+        </div>
+      </div>
+
+      <div class="perg29 perg">
+        <h2 class="pergunta">Qual o número de Euler (e) arredondado?</h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">2,71</button>
+          <button class="b btn" onclick="noopc()">1,61</button>
+          <button class="c btn" onclick="noopc()">3,14</button>
+          <button class="d btn" onclick="noopc()">4,44</button>
+        </div>
+      </div>
+
+      <div class="perg30 perg">
+        <h2 class="pergunta">
+          Qual o nome da constante da gravidade universal?
+        </h2>
+        <div class="ops">
+          <button class="a btn" onclick="opc()">G</button>
+          <button class="b btn" onclick="noopc()">C</button>
+          <button class="c btn" onclick="noopc()">H</button>
+          <button class="d btn" onclick="noopc()">N</button>
+        </div>
+      </div>
+
+      <div class="perg31">
+        <p><strong>Você venceu o jogo!!!!!</strong></p>
+        <h1 class="nomewin"></h1>
+        <h1 class="valortot">0</h1>
+        <button class="resetwin btn" onclick="window.location.reload();">
+          Recomeçar
+        </button>
+      </div>
+      <div class="pergnum"></div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
