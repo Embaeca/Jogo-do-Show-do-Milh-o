@@ -1,7 +1,3 @@
-
-
-  const nome = document.querySelector(".nome").value;
-
 let dd = document.querySelector(".dica");
 let comecar_jogo = document.querySelector(".comecar_jogo");
 let valor_acumulado = document.querySelector(".valor_acumulado");
@@ -276,7 +272,7 @@ function telainicialaud() {
   aberturaaudio.play().catch((error) => {});
 }
 function boasorteaud() {
-  
+  const nome = document.querySelector(".nome").value;
   if (nome == "" || nome == undefined) {
     alert("Por favor digite seu nome!!");
   }else{
