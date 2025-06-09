@@ -206,7 +206,6 @@ function respcert() {
   document.querySelector(pergg + proxperg).style.display = "none";
   if (pp.length === 0) {
     proxperg = 31;
-    console.log(proxperg);
   } else {
     let pergaleatoria = Math.floor(Math.random() * pp.length);
     proxperg = pp[pergaleatoria];
@@ -262,7 +261,6 @@ function temp() {
     tempoInterval = setInterval(() => {
       conttemp--;
       temporizador.innerHTML = conttemp;
-      console.log(conttemp);
       if (conttemp <= 0) {
         if (proxperg == 31) {
         } else {
