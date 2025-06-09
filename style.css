@@ -275,3 +275,61 @@ header h1 {
     transform: scale(1);
   }
 }
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .iniciar_jogo {
+    margin-top: 30px;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .iniciar_jogo input.nome,
+  .iniciar_jogo button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .aa {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .perguntas {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .ops {
+    grid-template-columns: 1fr;
+  }
+
+  .ops button {
+    font-size: 0.9rem;
+  }
+
+  .temporizador {
+    left: auto;
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .pergnum {
+    left: auto;
+    position: static;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .perg31 h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .resetwin {
+    width: 100%;
+  }
+}
