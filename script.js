@@ -1,3 +1,7 @@
+
+
+  const nome = document.querySelector(".nome").value;
+
 let dd = document.querySelector(".dica");
 let comecar_jogo = document.querySelector(".comecar_jogo");
 let valor_acumulado = document.querySelector(".valor_acumulado");
@@ -166,16 +170,12 @@ function comecar_jog() {
   pergnum.innerHTML = 30 - pp.length + 1;
   aberturaaudio.muted = true;
   suspenceaud();
-  const nome = document.querySelector(".nome").value;
-  if (nome == "" || nome == undefined) {
-    alert("Por favor digite seu nome!!");
-  } else {
     document.querySelector(pergg).style.display = "block";
     document.querySelector(".name").innerHTML = nome;
     iniciar_jogo.style.display = "none";
     perguntas.style.display = "block";
     temp();
-  }
+  
 }
 
 function noopc() {
@@ -278,17 +278,22 @@ function telainicialaud() {
   aberturaaudio.play().catch((error) => {});
 }
 function boasorteaud() {
-  aberturaaudio.muted = true;
-  boasorteaudio.muted = false;
-  boasorteaudio.play().catch((error) => {});
-  boasorteaudio.addEventListener(
-    "ended",
-    () => {
-      boasorteaudio.muted = true;
-      comecar_jog();
-    },
-    { once: true }
-  );
+  
+  if (nome == "" || nome == undefined) {
+    alert("Por favor digite seu nome!!");
+  }else{
+    aberturaaudio.muted = true;
+    boasorteaudio.muted = false;
+    boasorteaudio.play().catch((error) => {});
+    boasorteaudio.addEventListener(
+      "ended",
+      () => {
+        boasorteaudio.muted = true;
+        comecar_jog();
+      },
+      { once: true }
+    );
+  }
 }
 function errouaud() {
   if (document.querySelector(".nome").value == "admin") {
