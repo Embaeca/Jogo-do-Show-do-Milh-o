@@ -99,9 +99,12 @@ comecar_jogo.addEventListener("click", () => {
   if (document.querySelector(".comecar_jogo").value == "2") {
     window.location.reload();
   } else {
-    
-  const nome = document.querySelector(".nome").value;
+if(document.querySelector(".nome").value !== "" || document.querySelector(".nome").value !== undefined){
     boasorteaud();
+}else{
+alert("Digite seu nome para começar o jogo!!")
+}
+
   }
 });
 dd.addEventListener("click", () => {
