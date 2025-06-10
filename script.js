@@ -277,7 +277,7 @@ function telainicialaud() {
   aberturaaudio.play().catch((error) => {});
 }
 function boasorteaud() {
-  if (document.querySelector("nome").value == "" || document.querySelector("nome").value == undefined) {
+  if (document.querySelector(".nome").value == "" || document.querySelector(".nome").value == undefined || document.querySelector(".nome").value == null) {
     alert("Por favor digite seu nome!!");
   }else{
     aberturaaudio.muted = true;
