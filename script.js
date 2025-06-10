@@ -280,6 +280,7 @@ function boasorteaud() {
   if (document.querySelector(".nome").value == "" || document.querySelector(".nome").value == undefined || document.querySelector(".nome").value == null) {
     alert("Por favor digite seu nome!!");
   }else{
+    var nome = document.querySelector(".nome").value
     aberturaaudio.muted = true;
     boasorteaudio.muted = false;
     boasorteaudio.play().catch((error) => {});
