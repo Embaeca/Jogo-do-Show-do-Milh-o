@@ -213,7 +213,6 @@ function respcert() {
     pp = pp.filter((item) => item !== pp[pergaleatoria]);
   }
   if (proxperg == 31) {
-    document.querySelector(".comecar_jogo").style.margin = "5px"
     pergnum.style.display = "none";
     suspense.muted = true;
     document.querySelector(pergg + proxperg).style.display = "flex";

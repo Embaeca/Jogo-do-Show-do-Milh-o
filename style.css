@@ -288,6 +288,7 @@ header h1 {
 
   .iniciar_jogo input.nome,
   .iniciar_jogo button {
+    margin: 1rem;
     width: 100%;
     margin-bottom: 10px;
   }
